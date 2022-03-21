@@ -30,17 +30,48 @@ body{
     color: rgb(251, 220, 43);
     font-size: 30px;
 }
+.container{
+    padding:25px 15px;
+}
+.text{
+    letter-spacing: 1px;
+  
+}
 .title{
     font-size: 2em;
     color: #06b1ab;
     padding-bottom: 20px;
 }
-.container{
-    padding:25px 15px;
+.subtitle{
+    color: rgba(0, 0, 0, 0.424);
+    font-size: 1.2em;
+    text-align: right;
+    font-style: italic;
+    letter-spacing: 2px;
+    padding: 10px;
+}
+.btn a{
+    font-size: 1.2em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color:#001c32;
+    color: #ffffff;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 strong{
     font-weight: 800;
 }
+.photo-details{
+    width:100%;
+    padding-bottom: 30px;
+}
+
 /* --------FORM CSS-------- */
 form label, form legend {
     display: block;
@@ -60,7 +91,7 @@ form label, form legend {
 .btn-submit{
     padding: 15px 25px;
     background-color: #001c32;
-    color: #00e0d8;
+    color: #ffffff;
     font-weight: bold;
     font-size: 18px;
     border: none;

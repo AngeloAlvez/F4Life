@@ -1,0 +1,59 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.city{
+    margin: 10px;
+    padding: 10px;
+    
+}
+.city-name{
+    font-weight: 900;
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #050505;
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.507);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.198);
+    margin-bottom: 30px;
+}
+.card:active{
+    transform: scale(1.01);
+}
+.card a{
+    text-decoration: none;
+}
+.card-image{
+    padding: 10px;
+    width: 100%;
+}
+.info{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@media screen and (min-width:768px) {
+    .card{
+        width: 45%;
+    }
+    .card:hover{
+        transform: scale(1.01);
+    }
+    .city ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .city-name{
+        font-size: 2.5em;
+        padding: 30px;
+    }
+    .info{
+        font-size: 1.2em;
+        padding: 40px;
+    }
+    .
+    
+}
