@@ -1,54 +1,70 @@
+let emailRegex = /^([a-zA-Z0-9.]{1,32})@([a-zA-Z0-9]{1,16})(.com)$/
+var teste = emailRegex.test('aaaaaaaaaaaaaaaaaaaaaa@aa.com.br');
 
-import { useState } from "react";
+let submit = document.getElementById('button-submit')
+submit.addEventListener('click',(event) =>{
+  event.preventDefault()
 
-export default function App() {
-  const [formOutput, setFormOutput] = useState("");
-  const [display, setDisplay] = useState("none");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  let name = document.getElementById('name');
+  let email = document.getElementById('email');
+  let message = document.getElementById('message');
 
-  const validCharacters = "abcdefghijklmnopqrstuvwxyz0123456789.";
 
-  const handleFormSubmission = (ev) => {
-    ev.preventDefault();
 
-    setDisplay("block");
+  if(name.value == ''){
+    showMessageBallon('Erro no formulário, insira um nome');
+    name.focus();
+  } else if (!emailRegex.test(email.value)) {
+    showMessageBallon ('Erro no formulário, insira um email válido');
+    email.focus();
+  } else if(message.value == '') {
+    showMessageBallon ('Erro no formulário, insira uma mensagem');
+    message.focus()
+  } else{
+    const[user] = email.value.split('@')
+    showMessageBallon(`Formulário enviado! Obrigado, ${user}`)
+  }
+})
 
-    setMessage("");
+function showMessageBallon(text){
+  divError = document.getElementById('error-message')
+  divError.innerHTML = `<div class="balao" id="ballon"><p>${text}</p></div>`
+}
 
-    if (!email.includes("@"))
-      return setFormOutput("Erro no envio: Endereço de mail inválido");
+// function myFunction(){
+//   let name = document.getElementById('name').value
+//   let email = document.getElementById('email').value
+//   let message = document.getElementById('message').value
+//   const [user, domain] = email.split("@");
+//   // if (name.length<30){
+//   //   error(`Obrigado, ${name}.`);
+//   // }else{
+//   //   error(`nome comprido da desgraça`);
+//   // }
+//   if ((user.length >=1) &&
+//     (user.length<=32)&&
+//     (domain.length >=3) &&
+//     (domain.length<=16)&&
+//     // (user.search("@")==-1) &&
+//     // (domain.search("@")==-1) &&
+//     (user.search(" ")==-1) &&
+//     (domain.search(" ")==-1) &&
+//     (domain.search(".")!=-1) &&
+//     (domain.indexOf(".") >=1)&&
+//     (domain.lastIndexOf(".") < domain.length - 1)) {
+// messagem('correto');
+// }
+// else{
+// messagem('invalido');
+// return false
+// }
+// }
+  
 
-    const [user, domain] = email.split("@");
 
-    if (user.length > 32)
-      return setFormOutput("Erro no envio: Endereço de mail inválido");
+// const = document.getElementById('ul-task')
+// ul.appendChild(taskItem)
 
-    if (!domain.includes(".com"))
-      return setFormOutput("Erro no envio: Endereço de mail inválido");
-
-    const [firstPart, secondPart] = domain.split(".com");
-
-    if (secondPart)
-      return setFormOutput("Erro no envio: Endereço de mail inválido");
-
-    if (firstPart.length > 16)
-      return setFormOutput("Erro no envio: Endereço de mail inválido");
-
-    for (let char of user) {
-      if (!validCharacters.includes(char.toLowerCase()))
-        return setFormOutput("Erro no envio: Endereço de mail inválido");
-    }
-
-    if (firstPart.includes("."))
-      return setFormOutput("Erro no envio: Endereço de mail inválido");
-
-    for (let char of firstPart) {
-      if (!validCharacters.includes(char))
-        return setFormOutput("Erro no envio: Endereço de mail inválido");
-    }
-
-    if (!message) return setFormOutput("Erro no envio: Insira uma mensagem");
-
-    setFormOutput(`Obrigado pelo contato, ${user}!`);
-  };
+// console.log(enviar)
+// enviar.addEventListener("keypress", submitForm);
+// error('opa');

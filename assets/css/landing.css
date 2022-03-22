@@ -29,6 +29,7 @@ body{
 .rate-stars {
     color: rgb(251, 220, 43);
     font-size: 30px;
+    margin: 10px 0px;
 }
 .container{
     padding:25px 15px;
@@ -101,6 +102,16 @@ form label, form legend {
 }
 .btn-submit:hover{
     transform: scale(1.05);
+}
+
+.balao {
+    display: flex;
+    justify-content:space-around;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border: 2px dashed red
+   
 }
 
 @media screen and (max-width: 768px){
